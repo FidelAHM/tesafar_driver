@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:driver_app/login.dart';
 import 'package:driver_app/homescreen.dart';
 import 'package:driver_app/signin.dart';
+import 'package:driver_app/currentlocation.dart';
 
 class login extends StatefulWidget {
   const login({Key? key}) : super(key: key);
@@ -16,12 +17,13 @@ class _loginState extends State<login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.black,
         appBar: AppBar(
-          backgroundColor: Colors.indigoAccent[400],
+          backgroundColor: Colors.black,
           title: Text('MY ACCOUNT',
               style: TextStyle(
                 fontSize: 20,
-                color: Colors.white,
+                color: Colors.amberAccent.shade400,
               )),
         ),
         body: SafeArea(
@@ -32,12 +34,13 @@ class _loginState extends State<login> {
                 children: [
                   SizedBox(height: 80),
                   Container(
-                      height: 150, child: Image.asset('lib/images/driver.png')),
+                      height: 150,
+                      child: Image.asset('lib/images/taxi-driver.png')),
                   SizedBox(height: 20),
                   Text(
                     'LOG IN',
                     style: TextStyle(
-                        color: Colors.indigoAccent[400],
+                        color: Colors.amberAccent[400],
                         fontSize: 28,
                         fontWeight: FontWeight.bold),
                   )
@@ -47,28 +50,38 @@ class _loginState extends State<login> {
                 height: 20,
               ),
               TextField(
+                style: TextStyle(color: Colors.amberAccent.shade400),
                 decoration: InputDecoration(
-                    fillColor: Colors.transparent,
                     labelText: 'Phone Number',
                     labelStyle: TextStyle(
                       color: Colors.grey[600],
                       fontSize: 15,
                     ),
-                    filled: true),
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade900),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            width: 1, color: Colors.amberAccent.shade400))),
               ),
               SizedBox(
                 height: 10,
               ),
               TextField(
                 obscureText: true,
+                style: TextStyle(color: Colors.amberAccent.shade400),
                 decoration: InputDecoration(
-                    fillColor: Colors.transparent,
                     labelText: 'Password',
                     labelStyle: TextStyle(
                       color: Colors.grey[600],
                       fontSize: 15,
                     ),
-                    filled: true),
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade900),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            width: 1, color: Colors.amberAccent.shade400))),
               ),
               SizedBox(
                 height: 40,
@@ -80,15 +93,15 @@ class _loginState extends State<login> {
                       height: 50,
                       width: 150,
                       child: RaisedButton(
-                        color: Colors.indigoAccent[400],
+                        color: Colors.amberAccent[400],
                         onPressed: () {
-                          Navigator.pushNamed(context, '/location');
+                          Navigator.pushNamed(context, '/clocation');
                         },
                         child: Text('log in'),
                       ),
                     ),
                     height: 50,
-                    disabledColor: Colors.indigoAccent[400],
+                    disabledColor: Colors.amberAccent[400],
                   ),
                   SizedBox(
                     height: 50,
@@ -97,7 +110,7 @@ class _loginState extends State<login> {
                     child: Text('Register',
                         style: TextStyle(
                             decoration: TextDecoration.underline,
-                            color: Colors.indigoAccent[400])),
+                            color: Colors.amberAccent[400])),
                     onTap: () {
                       Navigator.pushNamed(context, '/signin');
                     },

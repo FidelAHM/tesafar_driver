@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:driver_app/signin.dart';
 import 'package:driver_app/login.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:driver_app/detail.dart';
 import 'dart:io';
 
 class signin extends StatefulWidget {
@@ -16,9 +17,13 @@ class _signinState extends State<signin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.black,
         appBar: AppBar(
-          title: Text("REGISTER"),
-          backgroundColor: Colors.indigoAccent[400],
+          title: Text(
+            "REGISTER",
+            style: TextStyle(color: Colors.amberAccent.shade400),
+          ),
+          backgroundColor: Colors.black,
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -35,35 +40,6 @@ class _signinState extends State<signin> {
                               backgroundColor: Colors.grey[300],
                               child: Padding(
                                 padding: const EdgeInsets.all(10),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: <Widget>[
-                                    SizedBox(
-                                      height: 50,
-                                    ),
-                                    InkWell(
-                                      child: Icon(
-                                        Icons.image,
-                                        color: Colors.indigoAccent[400],
-                                      ),
-                                      onTap: () {
-                                        _getFromGallery();
-                                      },
-                                    ),
-                                    SizedBox(
-                                      width: 20,
-                                    ),
-                                    InkWell(
-                                      child: Icon(
-                                        Icons.camera_alt_rounded,
-                                        color: Colors.indigoAccent[400],
-                                      ),
-                                      onTap: () {
-                                        _getFromCamera();
-                                      },
-                                    )
-                                  ],
-                                ),
                               ),
                             )
                           : CircleAvatar(
@@ -73,68 +49,118 @@ class _signinState extends State<signin> {
                               ))),
                 ),
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  SizedBox(
+                    height: 50,
+                  ),
+                  InkWell(
+                    child: Icon(
+                      Icons.image,
+                      color: Colors.amberAccent[400],
+                      size: 30,
+                    ),
+                    onTap: () {
+                      _getFromGallery();
+                    },
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  InkWell(
+                    child: Icon(
+                      Icons.camera_alt_rounded,
+                      color: Colors.amberAccent[400],
+                      size: 30,
+                    ),
+                    onTap: () {
+                      _getFromCamera();
+                    },
+                  )
+                ],
+              ),
               SizedBox(
                 height: 10,
-              ),
-              Text(
-                'REGISTER',
-                style: TextStyle(fontSize: 20, color: Colors.indigoAccent[400]),
               ),
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Column(
                   children: [
                     TextField(
+                      style: TextStyle(color: Colors.amberAccent.shade400),
                       decoration: InputDecoration(
-                          fillColor: Colors.transparent,
                           labelText: 'Full Name',
                           labelStyle: TextStyle(
                             color: Colors.grey[600],
                             fontSize: 15,
                           ),
-                          filled: true),
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey.shade900),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  width: 1,
+                                  color: Colors.amberAccent.shade400))),
                     ),
                     SizedBox(
                       height: 20,
                     ),
                     TextField(
+                      style: TextStyle(color: Colors.amberAccent.shade400),
                       decoration: InputDecoration(
-                          fillColor: Colors.transparent,
                           labelText: 'Phone Number',
                           labelStyle: TextStyle(
                             color: Colors.grey[600],
                             fontSize: 15,
                           ),
-                          filled: true),
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey.shade900),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  width: 1,
+                                  color: Colors.amberAccent.shade400))),
                     ),
                     SizedBox(
                       height: 10,
                     ),
                     TextField(
+                      style: TextStyle(color: Colors.amberAccent.shade400),
                       obscureText: true,
                       decoration: InputDecoration(
-                        fillColor: Colors.transparent,
-                        labelText: 'New Password',
-                        labelStyle: TextStyle(
-                          color: Colors.grey[600],
-                          fontSize: 15,
-                        ),
-                        filled: true,
-                      ),
+                          labelText: 'New Password',
+                          labelStyle: TextStyle(
+                            color: Colors.grey[600],
+                            fontSize: 15,
+                          ),
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey.shade900),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  width: 1,
+                                  color: Colors.amberAccent.shade400))),
                     ),
                     SizedBox(
                       height: 20,
                     ),
                     TextField(
+                      style: TextStyle(color: Colors.amberAccent.shade400),
                       obscureText: true,
                       decoration: InputDecoration(
-                          fillColor: Colors.transparent,
                           labelText: 'Comfirm Password',
                           labelStyle: TextStyle(
                             color: Colors.grey[600],
                             fontSize: 15,
                           ),
-                          filled: true),
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey.shade900),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  width: 1,
+                                  color: Colors.amberAccent.shade400))),
                     ),
                   ],
                 ),
@@ -142,22 +168,27 @@ class _signinState extends State<signin> {
               SizedBox(
                 height: 40,
               ),
-              Column(
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ButtonTheme(
-                      child: SizedBox(
-                        height: 50,
-                        width: 150,
-                        child: RaisedButton(
-                          color: Colors.indigoAccent[400],
-                          onPressed: () {
-                            Navigator.pushNamed(context, '/');
-                          },
-                          child: Text('Continue'),
-                        ),
-                      ),
-                      height: 50,
-                      disabledColor: Colors.indigoAccent[400]),
+                  Text(
+                    'Continue',
+                    style:
+                        TextStyle(color: Colors.amberAccent[400], fontSize: 15),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  InkWell(
+                    child: Icon(
+                      Icons.arrow_right_alt_rounded,
+                      size: 30,
+                      color: Colors.amberAccent.shade400,
+                    ),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/cdetail');
+                    },
+                  )
                 ],
               )
             ],
