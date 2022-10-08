@@ -34,12 +34,12 @@ class _RatingState extends State<Rating> {
     return Scaffold(
       body: Builder(
         builder: (context) => Scaffold(
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.white,
           appBar: AppBar(
-            backgroundColor: Colors.black,
+            backgroundColor: Colors.indigoAccent.shade400,
             title: Text(
               'Rating',
-              style: TextStyle(color: Colors.amberAccent.shade400),
+              style: TextStyle(color: Colors.white),
             ),
             actions: [
               IconButton(
@@ -60,7 +60,7 @@ class _RatingState extends State<Rating> {
             textDirection: _isRTLMode ? TextDirection.rtl : TextDirection.ltr,
             child: SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(70.0, 0, 0, 0),
+                padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisSize: MainAxisSize.min,
@@ -77,6 +77,71 @@ class _RatingState extends State<Rating> {
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
                           color: Colors.grey.shade400),
+                    ),
+                    SizedBox(
+                      height: 490,
+                    ),
+                    BottomNavigationBar(
+                      elevation: 20,
+                      type: BottomNavigationBarType.fixed,
+                      selectedItemColor: Colors.grey.shade600,
+                      selectedFontSize: 13,
+                      unselectedFontSize: 13,
+                      selectedLabelStyle:
+                          TextStyle(color: Colors.indigoAccent.shade400),
+                      unselectedLabelStyle:
+                          TextStyle(color: Colors.grey.shade200),
+                      iconSize: 30,
+                      items: [
+                        BottomNavigationBarItem(
+                          label: "Home",
+                          icon: InkWell(
+                            child: Icon(
+                              Icons.home,
+                              color: Colors.indigoAccent.shade400,
+                            ),
+                            onTap: () {
+                              Navigator.pushNamed(context, '/home');
+                            },
+                          ),
+                        ),
+                        BottomNavigationBarItem(
+                          label: "Earning",
+                          icon: InkWell(
+                            child: Icon(
+                              Icons.money,
+                              color: Colors.indigoAccent.shade400,
+                            ),
+                            onTap: () {
+                              Navigator.pushNamed(context, '/earnings');
+                            },
+                          ),
+                        ),
+                        BottomNavigationBarItem(
+                          label: "Rating",
+                          icon: InkWell(
+                            child: Icon(
+                              Icons.star_border_rounded,
+                              color: Colors.indigoAccent.shade400,
+                            ),
+                            onTap: () {
+                              Navigator.pushNamed(context, '/rating');
+                            },
+                          ),
+                        ),
+                        BottomNavigationBarItem(
+                          label: "My Account",
+                          icon: InkWell(
+                            child: Icon(
+                              Icons.account_circle_outlined,
+                              color: Colors.indigoAccent.shade400,
+                            ),
+                            onTap: () {
+                              Navigator.pushNamed(context, '/account');
+                            },
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),

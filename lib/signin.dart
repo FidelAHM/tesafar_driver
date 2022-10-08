@@ -17,14 +17,13 @@ class _signinState extends State<signin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Text(
-            "REGISTER",
-            style: TextStyle(color: Colors.amberAccent.shade400),
-          ),
-          backgroundColor: Colors.black,
-        ),
+            title: Text(
+              "REGISTER",
+              style: TextStyle(color: Colors.white),
+            ),
+            backgroundColor: Colors.indigoAccent.shade400),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -58,7 +57,7 @@ class _signinState extends State<signin> {
                   InkWell(
                     child: Icon(
                       Icons.image,
-                      color: Colors.amberAccent[400],
+                      color: Colors.indigoAccent[400],
                       size: 30,
                     ),
                     onTap: () {
@@ -71,7 +70,7 @@ class _signinState extends State<signin> {
                   InkWell(
                     child: Icon(
                       Icons.camera_alt_rounded,
-                      color: Colors.amberAccent[400],
+                      color: Colors.indigoAccent[400],
                       size: 30,
                     ),
                     onTap: () {
@@ -88,7 +87,7 @@ class _signinState extends State<signin> {
                 child: Column(
                   children: [
                     TextField(
-                      style: TextStyle(color: Colors.amberAccent.shade400),
+                      style: TextStyle(color: Colors.indigoAccent.shade400),
                       decoration: InputDecoration(
                           labelText: 'Full Name',
                           labelStyle: TextStyle(
@@ -101,13 +100,13 @@ class _signinState extends State<signin> {
                           focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                   width: 1,
-                                  color: Colors.amberAccent.shade400))),
+                                  color: Colors.indigoAccent.shade400))),
                     ),
                     SizedBox(
                       height: 20,
                     ),
                     TextField(
-                      style: TextStyle(color: Colors.amberAccent.shade400),
+                      style: TextStyle(color: Colors.indigoAccent.shade400),
                       decoration: InputDecoration(
                           labelText: 'Phone Number',
                           labelStyle: TextStyle(
@@ -120,13 +119,13 @@ class _signinState extends State<signin> {
                           focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                   width: 1,
-                                  color: Colors.amberAccent.shade400))),
+                                  color: Colors.indigoAccent.shade400))),
                     ),
                     SizedBox(
                       height: 10,
                     ),
                     TextField(
-                      style: TextStyle(color: Colors.amberAccent.shade400),
+                      style: TextStyle(color: Colors.indigoAccent.shade400),
                       obscureText: true,
                       decoration: InputDecoration(
                           labelText: 'New Password',
@@ -140,7 +139,7 @@ class _signinState extends State<signin> {
                           focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                   width: 1,
-                                  color: Colors.amberAccent.shade400))),
+                                  color: Colors.indigoAccent.shade400))),
                     ),
                     SizedBox(
                       height: 20,
@@ -160,7 +159,7 @@ class _signinState extends State<signin> {
                           focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                   width: 1,
-                                  color: Colors.amberAccent.shade400))),
+                                  color: Colors.indigoAccent.shade400))),
                     ),
                   ],
                 ),
@@ -173,8 +172,8 @@ class _signinState extends State<signin> {
                 children: [
                   Text(
                     'Continue',
-                    style:
-                        TextStyle(color: Colors.amberAccent[400], fontSize: 15),
+                    style: TextStyle(
+                        color: Colors.indigoAccent[400], fontSize: 15),
                   ),
                   SizedBox(
                     width: 10,
@@ -183,7 +182,7 @@ class _signinState extends State<signin> {
                     child: Icon(
                       Icons.arrow_right_alt_rounded,
                       size: 30,
-                      color: Colors.amberAccent.shade400,
+                      color: Colors.indigoAccent.shade400,
                     ),
                     onTap: () {
                       Navigator.pushNamed(context, '/cdetail');

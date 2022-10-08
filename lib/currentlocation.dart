@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:driver_app/currentlocation.dart';
+import 'package:driver_app/livelocation.dart';
 import 'package:driver_app/login.dart';
 import 'package:driver_app/rating.dart';
 import 'package:driver_app/my trip.dart';
 import 'package:driver_app/account.dart';
+import 'package:driver_app/earning.dart';
 // import 'dart:js';
 
 class currentLocation extends StatefulWidget {
@@ -30,8 +32,15 @@ class _currentLocationState extends State<currentLocation> {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         iconTheme: IconThemeData(
-          color: Colors.amberAccent[400],
+          color: Colors.indigoAccent[400],
         ),
+        actions: [
+          InkWell(
+              child: Icon(Icons.location_city_rounded),
+              onTap: () {
+                Navigator.pushNamed(context, '/llocation');
+              }),
+        ],
         elevation: 0,
         backgroundColor: Colors.transparent,
       ),
@@ -58,7 +67,7 @@ class _currentLocationState extends State<currentLocation> {
                 selectedFontSize: 13,
                 unselectedFontSize: 13,
                 selectedLabelStyle:
-                    TextStyle(color: Colors.amberAccent.shade400),
+                    TextStyle(color: Colors.indigoAccent.shade400),
                 unselectedLabelStyle: TextStyle(color: Colors.grey.shade200),
                 iconSize: 30,
                 items: [
@@ -66,8 +75,8 @@ class _currentLocationState extends State<currentLocation> {
                     label: "Home",
                     icon: InkWell(
                       child: Icon(
-                        Icons.car_rental_rounded,
-                        color: Colors.amberAccent.shade400,
+                        Icons.home,
+                        color: Colors.indigoAccent.shade400,
                       ),
                       onTap: () {
                         Navigator.pushNamed(context, '/home');
@@ -79,9 +88,11 @@ class _currentLocationState extends State<currentLocation> {
                     icon: InkWell(
                       child: Icon(
                         Icons.money,
-                        color: Colors.amberAccent.shade400,
+                        color: Colors.indigoAccent.shade400,
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushNamed(context, '/earnings');
+                      },
                     ),
                   ),
                   BottomNavigationBarItem(
@@ -89,7 +100,7 @@ class _currentLocationState extends State<currentLocation> {
                     icon: InkWell(
                       child: Icon(
                         Icons.star_border_rounded,
-                        color: Colors.amberAccent.shade400,
+                        color: Colors.indigoAccent.shade400,
                       ),
                       onTap: () {
                         Navigator.pushNamed(context, '/rating');
@@ -101,7 +112,7 @@ class _currentLocationState extends State<currentLocation> {
                     icon: InkWell(
                       child: Icon(
                         Icons.account_circle_outlined,
-                        color: Colors.amberAccent.shade400,
+                        color: Colors.indigoAccent.shade400,
                       ),
                       onTap: () {
                         Navigator.pushNamed(context, '/account');
@@ -140,7 +151,7 @@ class _currentLocationState extends State<currentLocation> {
                 label: const Text(''),
                 icon: Icon(
                   Icons.location_pin,
-                  color: Colors.amberAccent[400],
+                  color: Colors.indigoAccent[400],
                   size: 20,
                 ),
               ),

@@ -1,5 +1,7 @@
 // import 'dart:js';
 
+// import 'dart:js';
+
 import 'package:driver_app/signin.dart';
 import 'package:flutter/material.dart';
 import 'package:driver_app/currentlocation.dart';
@@ -10,6 +12,7 @@ import 'package:driver_app/detail.dart';
 import 'package:driver_app/rating.dart';
 import 'package:driver_app/my trip.dart';
 import 'package:driver_app/account.dart';
+import 'package:driver_app/earning.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -25,6 +28,8 @@ void main() {
       '/rating': (context) => Rating(),
       '/mytrip': (context) => myTrip(),
       '/account': (context) => Account(),
+      '/earnings': (context) => Earning(),
+      '/llocation': (context) => liveLocation()
     },
   ));
 }

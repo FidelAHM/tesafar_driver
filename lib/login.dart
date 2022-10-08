@@ -17,14 +17,11 @@ class _loginState extends State<login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.indigoAccent.shade400,
           title: Text('MY ACCOUNT',
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.amberAccent.shade400,
-              )),
+              style: TextStyle(fontSize: 20, color: Colors.white)),
         ),
         body: SafeArea(
             child: ListView(
@@ -34,13 +31,12 @@ class _loginState extends State<login> {
                 children: [
                   SizedBox(height: 80),
                   Container(
-                      height: 150,
-                      child: Image.asset('lib/images/taxi-driver.png')),
+                      height: 150, child: Image.asset('lib/images/driver.png')),
                   SizedBox(height: 20),
                   Text(
                     'LOG IN',
                     style: TextStyle(
-                        color: Colors.amberAccent[400],
+                        color: Colors.indigoAccent[400],
                         fontSize: 28,
                         fontWeight: FontWeight.bold),
                   )
@@ -50,7 +46,7 @@ class _loginState extends State<login> {
                 height: 20,
               ),
               TextField(
-                style: TextStyle(color: Colors.amberAccent.shade400),
+                style: TextStyle(color: Colors.indigoAccent.shade400),
                 decoration: InputDecoration(
                     labelText: 'Phone Number',
                     labelStyle: TextStyle(
@@ -62,14 +58,14 @@ class _loginState extends State<login> {
                     ),
                     focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                            width: 1, color: Colors.amberAccent.shade400))),
+                            width: 1, color: Colors.indigoAccent.shade400))),
               ),
               SizedBox(
                 height: 10,
               ),
               TextField(
                 obscureText: true,
-                style: TextStyle(color: Colors.amberAccent.shade400),
+                style: TextStyle(color: Colors.indigoAccent.shade400),
                 decoration: InputDecoration(
                     labelText: 'Password',
                     labelStyle: TextStyle(
@@ -81,7 +77,7 @@ class _loginState extends State<login> {
                     ),
                     focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                            width: 1, color: Colors.amberAccent.shade400))),
+                            width: 1, color: Colors.indigoAccent.shade400))),
               ),
               SizedBox(
                 height: 40,
@@ -93,7 +89,7 @@ class _loginState extends State<login> {
                       height: 50,
                       width: 150,
                       child: RaisedButton(
-                        color: Colors.amberAccent[400],
+                        color: Colors.indigoAccent[400],
                         onPressed: () {
                           Navigator.pushNamed(context, '/clocation');
                         },
@@ -101,7 +97,6 @@ class _loginState extends State<login> {
                       ),
                     ),
                     height: 50,
-                    disabledColor: Colors.amberAccent[400],
                   ),
                   SizedBox(
                     height: 50,
@@ -110,7 +105,7 @@ class _loginState extends State<login> {
                     child: Text('Register',
                         style: TextStyle(
                             decoration: TextDecoration.underline,
-                            color: Colors.amberAccent[400])),
+                            color: Colors.indigoAccent[400])),
                     onTap: () {
                       Navigator.pushNamed(context, '/signin');
                     },

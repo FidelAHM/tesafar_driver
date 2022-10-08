@@ -40,6 +40,10 @@ dependencies:
   google_maps_flutter: ^2.2.0
   geolocator: ^9.0.1
   flutter_rating_bar: ^4.0.1
+  location: ^4.4.0
+  provider: 
+  flutter_polyline_points: ^1.0.0
+  location_web: ^3.1.1
 
 dev_dependencies:
   flutter_test:

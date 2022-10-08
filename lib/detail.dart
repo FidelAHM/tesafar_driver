@@ -14,12 +14,12 @@ class _cDetailState extends State<cDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.indigoAccent.shade400,
         title: Text(
           'CAR DETAILS',
-          style: TextStyle(color: Colors.amberAccent.shade400),
+          style: TextStyle(color: Colors.indigoAccent.shade400),
         ),
       ),
       body: SingleChildScrollView(
@@ -30,19 +30,20 @@ class _cDetailState extends State<cDetail> {
               Container(
                   height: 200,
                   width: 200,
-                  child: Image.asset('lib/images/taxi-driver.png')),
+                  child: Image.asset('lib/images/driver.png')),
               SizedBox(
                 height: 30,
               ),
               Text(
                 'Enter car details',
-                style: TextStyle(color: Colors.grey.shade600, fontSize: 20),
+                style: TextStyle(
+                    color: Colors.indigoAccent.shade400, fontSize: 20),
               ),
               SizedBox(
                 height: 20,
               ),
               TextField(
-                style: TextStyle(color: Colors.amberAccent.shade400),
+                style: TextStyle(color: Colors.indigoAccent.shade400),
                 decoration: InputDecoration(
                     labelText: 'Car Model',
                     labelStyle: TextStyle(
@@ -54,13 +55,13 @@ class _cDetailState extends State<cDetail> {
                     ),
                     focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                            width: 1, color: Colors.amberAccent.shade400))),
+                            width: 1, color: Colors.indigoAccent.shade400))),
               ),
               SizedBox(
                 height: 10,
               ),
               TextField(
-                style: TextStyle(color: Colors.amberAccent.shade400),
+                style: TextStyle(color: Colors.indigoAccent.shade400),
                 decoration: InputDecoration(
                     labelText: 'Car Number',
                     labelStyle: TextStyle(
@@ -72,13 +73,13 @@ class _cDetailState extends State<cDetail> {
                     ),
                     focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                            width: 1, color: Colors.amberAccent.shade400))),
+                            width: 1, color: Colors.indigoAccent.shade400))),
               ),
               SizedBox(
                 height: 10,
               ),
               TextField(
-                style: TextStyle(color: Colors.amberAccent.shade400),
+                style: TextStyle(color: Color.fromARGB(255, 152, 116, 0)),
                 decoration: InputDecoration(
                     labelText: 'Car Color',
                     labelStyle: TextStyle(
@@ -90,7 +91,7 @@ class _cDetailState extends State<cDetail> {
                     ),
                     focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                            width: 1, color: Colors.amberAccent.shade400))),
+                            width: 1, color: Colors.indigoAccent.shade400))),
               ),
               SizedBox(
                 height: 100,
@@ -105,7 +106,7 @@ class _cDetailState extends State<cDetail> {
                     child: Text('Register'),
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
-                            Colors.amberAccent.shade400))),
+                            Colors.indigoAccent.shade400))),
               )
             ],
           ),
