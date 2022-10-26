@@ -5,11 +5,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:driver_app/currentlocation.dart';
 import 'package:driver_app/livelocation.dart';
-import 'package:driver_app/login.dart';
-import 'package:driver_app/rating.dart';
-import 'package:driver_app/my trip.dart';
-import 'package:driver_app/account.dart';
-import 'package:driver_app/earning.dart';
+
 // import 'dart:js';
 
 class currentLocation extends StatefulWidget {
@@ -50,7 +46,7 @@ class _currentLocationState extends State<currentLocation> {
             children: [
               Container(
                 width: 400,
-                height: 750,
+                height: 650,
                 child: GoogleMap(
                     initialCameraPosition: intitialCameraPositon,
                     markers: markers,
@@ -60,67 +56,27 @@ class _currentLocationState extends State<currentLocation> {
                       googleMapController = controller;
                     }),
               ),
-              BottomNavigationBar(
-                elevation: 20,
-                type: BottomNavigationBarType.fixed,
-                selectedItemColor: Colors.grey.shade600,
-                selectedFontSize: 13,
-                unselectedFontSize: 13,
-                selectedLabelStyle:
-                    TextStyle(color: Colors.indigoAccent.shade400),
-                unselectedLabelStyle: TextStyle(color: Colors.grey.shade200),
-                iconSize: 30,
-                items: [
-                  BottomNavigationBarItem(
-                    label: "Home",
-                    icon: InkWell(
-                      child: Icon(
-                        Icons.home,
-                        color: Colors.indigoAccent.shade400,
-                      ),
-                      onTap: () {
-                        Navigator.pushNamed(context, '/home');
-                      },
-                    ),
-                  ),
-                  BottomNavigationBarItem(
-                    label: "Earning",
-                    icon: InkWell(
-                      child: Icon(
-                        Icons.money,
-                        color: Colors.indigoAccent.shade400,
-                      ),
-                      onTap: () {
-                        Navigator.pushNamed(context, '/earnings');
-                      },
-                    ),
-                  ),
-                  BottomNavigationBarItem(
-                    label: "Rating",
-                    icon: InkWell(
-                      child: Icon(
-                        Icons.star_border_rounded,
-                        color: Colors.indigoAccent.shade400,
-                      ),
-                      onTap: () {
-                        Navigator.pushNamed(context, '/rating');
-                      },
-                    ),
-                  ),
-                  BottomNavigationBarItem(
-                    label: "My Account",
-                    icon: InkWell(
-                      child: Icon(
-                        Icons.account_circle_outlined,
-                        color: Colors.indigoAccent.shade400,
-                      ),
-                      onTap: () {
-                        Navigator.pushNamed(context, '/account');
-                      },
-                    ),
-                  ),
-                ],
+              SizedBox(
+                height: 10,
               ),
+              Material(
+                elevation: 15,
+              ),
+              Container(
+                width: 400,
+                height: 140,
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade200,
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: <BoxShadow>[
+                    BoxShadow(
+                        color: Colors.indigoAccent.shade100,
+                        blurRadius: 15.0,
+                        offset: Offset(0.0, 0.75))
+                  ],
+                ),
+                child: Center(child: Text('No Request for now')),
+              )
             ],
           ),
         ),

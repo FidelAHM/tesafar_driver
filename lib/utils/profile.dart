@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:driver_app/currentlocation.dart';
-import 'package:driver_app/account.dart';
+import 'package:driver_app/utils/profile.dart';
+import 'package:driver_app/utils/utils.dart';
 
-class Account extends StatefulWidget {
-  const Account({Key? key}) : super(key: key);
+class Profile extends StatefulWidget {
+  const Profile({Key? key}) : super(key: key);
 
   @override
-  State<Account> createState() => _AccountState();
+  State<Profile> createState() => _ProfileState();
 }
 
-class _AccountState extends State<Account> {
+class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -132,70 +132,6 @@ class _AccountState extends State<Account> {
                                 Colors.indigoAccent.shade400)),
                         onPressed: () {},
                         child: Text('Sign out'))),
-                SizedBox(
-                  height: 115,
-                ),
-                BottomNavigationBar(
-                    elevation: 20,
-                    type: BottomNavigationBarType.fixed,
-                    selectedItemColor: Colors.grey.shade600,
-                    selectedFontSize: 13,
-                    unselectedFontSize: 13,
-                    selectedLabelStyle:
-                        TextStyle(color: Colors.indigoAccent.shade400),
-                    unselectedLabelStyle:
-                        TextStyle(color: Colors.grey.shade200),
-                    iconSize: 30,
-                    items: [
-                      BottomNavigationBarItem(
-                        label: "Home",
-                        icon: InkWell(
-                          child: Icon(
-                            Icons.home,
-                            color: Colors.indigoAccent.shade400,
-                          ),
-                          onTap: () {
-                            Navigator.pushNamed(context, '/home');
-                          },
-                        ),
-                      ),
-                      BottomNavigationBarItem(
-                        label: "Earning",
-                        icon: InkWell(
-                          child: Icon(
-                            Icons.money,
-                            color: Colors.indigoAccent.shade400,
-                          ),
-                          onTap: () {
-                            Navigator.pushNamed(context, '/earnings');
-                          },
-                        ),
-                      ),
-                      BottomNavigationBarItem(
-                        label: "Rating",
-                        icon: InkWell(
-                          child: Icon(
-                            Icons.star_border_rounded,
-                            color: Colors.indigoAccent.shade400,
-                          ),
-                          onTap: () {
-                            Navigator.pushNamed(context, '/rating');
-                          },
-                        ),
-                      ),
-                      BottomNavigationBarItem(
-                        label: "My Account",
-                        icon: InkWell(
-                          child: Icon(
-                            Icons.account_circle_outlined,
-                            color: Colors.indigoAccent.shade400,
-                          ),
-                          onTap: () {
-                            Navigator.pushNamed(context, '/account');
-                          },
-                        ),
-                      ),
-                    ])
               ],
             )));
   }

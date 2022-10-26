@@ -101,7 +101,7 @@ class _cDetailState extends State<cDetail> {
                 height: 50,
                 child: ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/clocation');
+                      Navigator.pushNamed(context, '/util');
                     },
                     child: Text('Register'),
                     style: ButtonStyle(

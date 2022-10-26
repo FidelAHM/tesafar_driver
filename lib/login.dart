@@ -91,7 +91,7 @@ class _loginState extends State<login> {
                       child: RaisedButton(
                         color: Colors.indigoAccent[400],
                         onPressed: () {
-                          Navigator.pushNamed(context, '/clocation');
+                          Navigator.pushNamed(context, '/util');
                         },
                         child: Text('log in'),
                       ),
